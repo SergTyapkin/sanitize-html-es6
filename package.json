@@ -6,6 +6,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "homepage": "https://github.com/SergTyapkin/sanitize-html-es6",
   "scripts": {
     "prepare": "husky",
     "build": "tsc",
