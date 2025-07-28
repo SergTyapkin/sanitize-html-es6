@@ -3,7 +3,6 @@
   "version": "0.2.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "homepage": "https://github.com/SergTyapkin/sanitize-html-es6",
@@ -25,7 +24,7 @@
     ],
     "*.{md,html,yml,yaml,json}": "npm run lint:other:fix"
   },
-  "tags": [
+  "keywords": [
     "sanitize",
     "html",
     "es6",
