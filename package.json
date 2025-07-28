@@ -1,8 +1,5 @@
 {
-  "name": "@gitlab/widget-test",
-  "publishConfig": {
-    "@gitlab:registry": "https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
-  },
+  "name": "@sergtyapkin/sanitize-html-es6",
   "version": "0.1.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -27,6 +24,7 @@
     ],
     "*.{md,html,yml,yaml,json}": "npm run lint:other:fix"
   },
+  "tags": ["sanitize", "html", "es6", "clean", "parser"],
   "dependencies": {
   },
   "devDependencies": {
