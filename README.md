@@ -2,20 +2,28 @@
 
 Шаблонный репозиторий для TS-пакета в NPM registry
 
-## Чтобы собрать этот проект в библиотеку, используйте:
-
-```shell
-npm run build
-```
-```shell
-npm publish --access public
-```
-
-После этого все .js и .d.ts файлы появятся в папке `dist`.
-
 ## Как с этим работать?
+Есть всего два метода:
 
-1. Напишите ваш код в `./src`
-2. Если хотите, напишите тесты в `./tests`. Они будут запускаться перед CI. Если они не прошли, новая версия не будет загружена
-3. Поменяйте путь до входного .js-файла проекта в папке `dist` в `package.json` -> `"main"`, и путь до .d.ts-файла типов в `package.json` -> `"types"`
-4. Не забывайте менять версию библиотеки в `package.json` -> `"version"`
+### 1. setOptions(options)
+Устанавливает разрешенные теги и прочие настройки белого списка фильтрации
+
+### 2. sanitize(input)
+Возвращает строку санитизированного html текста
+
+## Пример
+```ts
+import SanitizeHTML from "@sergtyapkin/sanitize-html-es6";
+
+SanitizeHTML.setOptions({
+  AllowedTags: SanitizeHTML.AllowedTags.concat(['SCRIPT'])
+  // AllowedAttributes: ...,
+  // AllowedCssStyles: ...,
+  // AllowedHrefSchemas: ...,
+  // AllowedContentTags: ...,
+  // AllowedUriAttributes: ...,
+  // AllowedIframeHosts: ...,
+});
+
+const result = SanitizeHTML.sanitize('<img src="http://some.site:3000/image/some.png" alt="image" onerror="const evil = \'code\'"><div><i>Some</i> <b>text</b></div>');
+```
