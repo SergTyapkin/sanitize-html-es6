@@ -1,0 +1,19 @@
+name: Makefile CI
+
+on:
+  pull_request:
+    branches: ['*']
+  push:
+    branches: [ 'main' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install packages
+        run: npm install
+
+      - name: test
+        run: npm run test

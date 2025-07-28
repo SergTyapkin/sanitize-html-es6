@@ -1,0 +1,61 @@
+{
+  "name": "@gitlab/widget-test",
+  "publishConfig": {
+    "@gitlab:registry": "https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/"
+  },
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "prepare": "husky",
+    "build": "tsc",
+    "test": "tsc && jest --coverage",
+    "docs": "typedoc",
+    "lint:code": "eslint",
+    "lint:code:fix": "eslint --fix",
+    "lint:other": "prettier '**/*.{yaml,json,html,md}'",
+    "lint:other:fix": "prettier --write '**/*.{yaml,json,html,md}'",
+    "lint": "npm run lint:code && npm run lint:other",
+    "lint:fix": "npm run lint:code:fix && npm run lint:other:fix"
+  },
+  "lint-staged": {
+    "*.{mjs,mts,js,ts,jsx,tsx,vue}": [
+      "npm run lint:code:fix"
+    ],
+    "*.{md,html,yml,yaml,json}": "npm run lint:other:fix"
+  },
+  "dependencies": {
+    "jest-junit": "^16.0.0",
+    "typescript": "^4.6.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@jest/globals": "^30.0.0-beta.3",
+    "@mxssfd/typedoc-theme": "^1.1.7",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.29",
+    "eslint": "9.14.0",
+    "eslint-plugin-compat": "^6.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.9.0",
+    "eslint-plugin-no-loops": "^0.4.0",
+    "eslint-plugin-no-use-extend-native": "^0.7.2",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-promise": "^7.1.0",
+    "eslint-plugin-sonarjs": "^2.0.4",
+    "globals": "^15.12.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.0-beta.3",
+    "jest-html-reporter": "^3.10.2",
+    "lint-staged": "^15.2.10",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.3.4",
+    "typedoc": "^0.26.11",
+    "typescript-eslint": "^8.13.0"
+  }
+}

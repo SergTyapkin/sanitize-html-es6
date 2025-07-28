@@ -1,0 +1,16 @@
+{
+  "testMatch": ["**/*.(spec|test).?(m)(js|ts)?(x)"],
+  "testEnvironment": "jsdom",
+  "reporters": [
+    "default",
+    "jest-html-reporter",
+    "jest-junit"
+  ],
+  "moduleFileExtensions": ["js", "ts", "mjs", "mts"],
+  "transform": {
+    "^.+\\.m?[t|j]sx?$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^~/(.*)": "<rootDir>/src/$1"
+  }
+}
